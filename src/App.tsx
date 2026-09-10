@@ -1,8 +1,24 @@
 
+import { Suspense } from 'react'
 import './App.css'
-import Batter from './Batter'
+import Users from './Users';
+
+// import Batter from './Batter'
 // import Card from './Card'
-import Counter from './Counter'
+// import Counter from './Counter'
+
+// const usersDataPromise = async() =>{
+//   const res = await fetch('https://jsonplaceholder.typicode.com/users')
+//   const data = await res.json();
+//   return data;
+// }
+
+const usersDataPromise = async() =>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/users')
+  const data = await res.json();
+  return data;
+}
+
 
 function App() {
 
@@ -22,9 +38,15 @@ function App() {
   return (
     <>
 
-      <Batter></Batter>
+      
 
-      <Counter></Counter>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Users usersDataPromise={usersDataPromise()}></Users>
+      </Suspense>
+
+      {/* <Batter></Batter>
+
+      <Counter></Counter> */}
 
       {/* <Card></Card> */}
 
