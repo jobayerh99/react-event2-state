@@ -1,6 +1,8 @@
 
 import './App.css'
-import Card from './Card'
+import Batter from './Batter'
+// import Card from './Card'
+import Counter from './Counter'
 
 function App() {
 
@@ -20,7 +22,11 @@ function App() {
   return (
     <>
 
-      <Card></Card>
+      <Batter></Batter>
+
+      <Counter></Counter>
+
+      {/* <Card></Card> */}
 
       {/* <button onclick="handleClick()">Click Me</button> */}
 
