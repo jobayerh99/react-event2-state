@@ -1,5 +1,6 @@
 
 import './App.css'
+import Card from './Card'
 
 function App() {
 
@@ -7,21 +8,23 @@ function App() {
   //   alert('Button Clicked')
   // }
 
-  const handleClick = () => {
-    alert('click me 3')
-  }
+  // const handleClick = () => {
+  //   alert('click me 3')
+  // }
 
 
-  const handleAddToCart = (id: number) => {
-    alert('Buying This ' + id)
-  }
+  // const handleAddToCart = (id: number) => {
+  //   alert('Buying This ' + id)
+  // }
 
   return (
     <>
 
+      <Card></Card>
+
       {/* <button onclick="handleClick()">Click Me</button> */}
 
-      <button onClick={handleClick}>Click Me 2</button>
+      {/* <button onClick={handleClick}>Click Me 2</button>
 
       <button onClick={handleClick}>Click Me 3</button>
 
@@ -29,7 +32,7 @@ function App() {
         alert('click me 4')
       }}>Click Me 4</button>
 
-      <button onClick={() => handleAddToCart(65)}>Add To Cart</button>
+      <button onClick={() => handleAddToCart(65)}>Add To Cart</button> */}
     </>
   )
 }
