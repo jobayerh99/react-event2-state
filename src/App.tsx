@@ -2,6 +2,7 @@
 import { Suspense } from 'react'
 import './App.css'
 import Users from './Users';
+import Todos from './ToDo';
 
 // import Batter from './Batter'
 // import Card from './Card'
@@ -15,6 +16,13 @@ import Users from './Users';
 
 const usersDataPromise = async() =>{
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
+  const data = await res.json();
+  return data;
+}
+
+
+const practiceDataPromise = async() =>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos')
   const data = await res.json();
   return data;
 }
@@ -38,11 +46,18 @@ function App() {
   return (
     <>
 
-      
+      <Suspense fallback={<P>Data Loading...</P>}>
+        <Todos practiceDataPromise={practiceDataPromise()}></Todos>
+      </Suspense>
 
       <Suspense fallback={<p>Loading...</p>}>
         <Users usersDataPromise={usersDataPromise()}></Users>
       </Suspense>
+      
+
+      
+
+      
 
       {/* <Batter></Batter>
 
